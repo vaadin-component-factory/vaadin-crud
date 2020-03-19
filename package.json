@@ -1,9 +1,9 @@
 {
-  "name": "@vaadin/vaadin-crud",
+  "name": "@vaadin-component-factory/vcf-enhanced-crud",
   "version": "1.1.0",
-  "description": "vaadin-crud",
+  "description": "vcf-enhanced-crud",
   "main": "vaadin-crud.html",
-  "repository": "vaadin/vaadin-crud",
+  "repository": "vaadin-component-factory/vcf-enhanced-crud",
   "keywords": [
     "Vaadin",
     "vaadin-crud",
