@@ -7,7 +7,14 @@
   "description": "vaadin-crud",
   "main": [
     "vaadin-crud.html",
-    "theme/material/vaadin-crud.html"
+    "theme/material/vaadin-crud.html",
+    "demo/crud-basic-demos.html",
+    "demo/crud-editor-position-demos.html",
+    "demo/crud-custom-demos.html",
+    "demo/crud-data-demos.html",
+    "demo/crud-advanced-demos.html",
+    "demo/crud-i18n-demos.html",
+    "demo/crud-theme-demos.html"
   ],
   "keywords": [
     "Vaadin",
@@ -25,7 +32,7 @@
     "wct.conf.js"
   ],
   "dependencies": {
-    "polymer": "^2.0.0",
+    "polymer": "Polymer/polymer#5f5d2c2",
     "iron-media-query": "^2.1.0",
     "vaadin-themable-mixin": "vaadin/vaadin-themable-mixin#^1.4.4",
     "vaadin-element-mixin": "vaadin/vaadin-element-mixin#^2.1.3",
@@ -47,5 +54,8 @@
     "vaadin-demo-helpers": "vaadin/vaadin-demo-helpers#^3.0.0",
     "vaadin-combo-box": "^5.0.3",
     "vaadin-notification": "^1.4.0"
+  },
+  "resolutions": {
+    "polymer": "5f5d2c2"
   }
 }
