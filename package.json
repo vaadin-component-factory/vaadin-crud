@@ -10,7 +10,7 @@
   "repository": "vaadin-component-factory/vcf-enhanced-crud",
   "homepage": "https://vaadin.com/components",
   "name": "@vaadin-component-factory/vcf-enhanced-crud",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "main": "vaadin-crud.js",
   "author": "Vaadin Ltd",
   "license": "https://raw.githubusercontent.com/vaadin/vaadin-crud/master/LICENSE",
