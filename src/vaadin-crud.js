@@ -759,7 +759,6 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   __cancel() {
-      debugger;
     if (this.__isDirty) {
       this.$.confirmCancel.opened = true;
     } else {
