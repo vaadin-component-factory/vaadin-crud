@@ -197,7 +197,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
         <vaadin-button id="save" slot="footer" on-click="__save" theme="primary" disabled="[[!__isDirty]]">[[i18n.saveItem]]</vaadin-button>
         <vaadin-button id="cancel" slot="footer" on-click="__cancel" theme="tertiary">[[i18n.cancel]]</vaadin-button>
         <div slot="footer" style="flex: auto;"></div>
-        <vaadin-button id="delete" slot="footer" on-click="__delete" theme="tertiary error" hidden="[[__isNew]]">[[i18n.deleteItem]]</vaadin-button>
+        <vaadin-button id="delete" slot="footer" on-click="__delete" theme="tertiary error">[[i18n.deleteItem]]</vaadin-button>
       </vaadin-dialog-layout>
     </div>
 
