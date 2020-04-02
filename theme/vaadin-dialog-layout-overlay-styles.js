@@ -7,8 +7,9 @@ const $_documentContainer = html`<dom-module id="dialog-layout-overlay-theme" th
       :host([theme~="layout"]) [part="content"] {
         display: flex;
         flex-direction: column;
-        padding: 0;
         max-height: 100vh;
+        overflow: hidden;
+        padding: 0;
       }
 
       :host([theme~="layout"]) [part="overlay"] {
