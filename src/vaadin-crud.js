@@ -161,17 +161,17 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
       :host([editor-position="bottom"]) #container {
         flex-direction: column;
       }
-      
+
       .footer {
         display: flex;
         flex: none;
         flex-direction: row-reverse;
       }
-      
+
       .default {
-        
+
       }
-      
+
     </style>
 
     <div id="container">
@@ -193,11 +193,11 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
             <vaadin-crud-form theme\$="[[theme]]" id="form" include="[[include]]" exclude="[[exclude]]"></vaadin-crud-form>
           </slot>
         </div>
-        
+
         <vaadin-button id="save" slot="footer" on-click="__save" theme="primary" disabled="[[!__isDirty]]">[[i18n.saveItem]]</vaadin-button>
         <vaadin-button id="cancel" slot="footer" on-click="__cancel" theme="tertiary">[[i18n.cancel]]</vaadin-button>
         <div slot="footer" style="flex: auto;"></div>
-        <vaadin-button id="delete" slot="footer" on-click="__delete" theme="tertiary error">[[i18n.deleteItem]]</vaadin-button>
+        <vaadin-button id="delete" slot="footer" on-click="__delete" theme="tertiary error" hidden="[[__isNew]]">[[i18n.deleteItem]]</vaadin-button>
       </vaadin-dialog-layout>
     </div>
 
@@ -215,7 +215,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '1.1.0';
+    return '1.5.3';
   }
 
   static get properties() {
