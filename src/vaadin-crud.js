@@ -202,7 +202,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
     </div>
 
     <vaadin-confirm-dialog theme\$="[[theme]]" id="confirmCancel" on-confirm="__confirmCancel" cancel="" confirm-text="[[i18n.confirm.cancel.button.confirm]]" cancel-text="[[i18n.confirm.cancel.button.dismiss]]" header="[[i18n.confirm.cancel.title]]" message="[[i18n.confirm.cancel.content]]" confirm-theme="primary">
-    </vaadin-confirm-dialog>
+    </vaadisin-confirm-dialog>
     <vaadin-confirm-dialog theme\$="[[theme]]" id="confirmDelete" on-confirm="__confirmDelete" cancel="" confirm-text="[[i18n.confirm.delete.button.confirm]]" cancel-text="[[i18n.confirm.delete.button.dismiss]]" header="[[i18n.confirm.delete.title]]" message="[[i18n.confirm.delete.content]]" confirm-theme="primary error">
     </vaadin-confirm-dialog>
 
@@ -215,7 +215,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '1.5.4';
+    return '1.5.5';
   }
 
   static get properties() {
@@ -445,6 +445,8 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
     this.__boundEditOnClickListener = this.__editOnClickListener.bind(this);
     this._grid = this.$.grid;
     this._form = this.$.form;
+    this.$.dialog.$.dialog.$.overlay.addEventListener('vaadin-overlay-outside-click', this.__cancelByEscOrClick.bind(this));
+    this.$.dialog.$.dialog.$.overlay.addEventListener('vaadin-overlay-escape-press', this.__cancelByEscOrClick.bind(this));
   }
 
   __computeEditorHeader(isNew, newItem, editItem) {
@@ -756,6 +758,14 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
       this._grid.clearCache();
       this.__closeEditor();
     }
+  }
+
+  __cancelByEscOrClick(e) {
+    if (e.type == 'vaadin-overlay-escape-press' && !this.__isDirty ||
+        e.type == 'vaadin-overlay-outside-click' && !this.__isDirty) {
+      e.preventDefault();
+    }
+    this.__cancel();
   }
 
   __cancel() {
