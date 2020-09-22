@@ -215,7 +215,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '1.5.5';
+    return '1.6.0';
   }
 
   static get properties() {
@@ -266,6 +266,13 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
       editOnClick: {
         type: Boolean,
         value: false
+      },
+      /**
+       * Enables confirm dialog before canceling / chaning item on the fly.
+       */
+      confirmOnCancel: {
+        type: Boolean,
+        value: true
       },
       /**
        * Function that provides items lazily. Receives arguments `params`, `callback`
@@ -600,6 +607,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
 
   __confirmBeforeChangingEditedItem(item, keepOpened) {
     if (
+      this.confirmOnCancel && // Confirm action is enabled
       this.editorOpened && // Editor opened
       this.__isDirty && // Form change has been made
       this.editedItem !== item // Item is different
@@ -769,7 +777,7 @@ class CrudElement extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   __cancel() {
-    if (this.__isDirty) {
+    if (this.confirmOnCancel && this.__isDirty) {
       this.$.confirmCancel.opened = true;
     } else {
       this.__confirmCancel();
