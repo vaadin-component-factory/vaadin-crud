@@ -3,7 +3,6 @@
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-crud)
 [![Build Status](https://travis-ci.org/vaadin/vaadin-crud.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-crud)
 [![Coverage Status](https://coveralls.io/repos/github/vaadin/vaadin-crud/badge.svg?branch=master)](https://coveralls.io/github/vaadin/vaadin-crud?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/web-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
  [![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadinvaadin-crud)
 [![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/vaadin-crud-directory-urlidentifier.svg)](https://vaadin.com/directory/component/vaadinvaadin-crud)
